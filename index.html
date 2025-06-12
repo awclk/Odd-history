@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
+    <div class="container">
         <h1>Odd Number Tracker</h1>
-        <input type="text" id="oddInput" placeholder="Enter odd number" />
-        <button onclick="submitOdd()">Submit</button>
-    </div>
-    <div id="history">
+        <input type="number" id="oddInput" placeholder="Enter an odd number" />
+        <button id="submitBtn">Submit</button>
+
         <h2>History</h2>
-        <table>
-            <tr>
-                <th>Time</th>
-                <th>Odd Number</th>
-            </tr>
+        <table id="historyTable">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Odd Number</th>
+                </tr>
+            </thead>
+            <tbody id="historyBody"></tbody>
         </table>
     </div>
 
