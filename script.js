@@ -1,19 +1,18 @@
-function addHistory() {
+document.addEventListener("DOMContentLoaded", function() {
     const numberInput = document.getElementById('numberInput');
     const historyTableBody = document.getElementById('historyTableBody');
 
-    const numberValue = numberInput.value;
-    if (numberValue === '') {
-        alert('Please enter a number');
-        return;
+    // Example function to add history
+    function addHistoryEntry(time, number) {
+        const row = historyTableBody.insertRow();
+        row.insertCell(0).innerText = time;
+        row.insertCell(1).innerText = number;
     }
 
-    const currentDateTime = new Date();
-    const formattedDateTime = currentDateTime.toLocaleString();
-
-    const newRow = document.createElement('tr');
-    newRow.innerHTML = <td>${formattedDateTime}</td><td>${numberValue}</td>;
-
-    historyTableBody.appendChild(newRow);
-    numberInput.value = '';  // Clear the input after submission
-}
+    // Assume you have a way to trigger adding history entries
+    numberInput.addEventListener('change', function() {
+        const currentTime = new Date().toLocaleString();
+        addHistoryEntry(currentTime, numberInput.value);
+        numberInput.value = ''; // Clear input after addition
+    });
+});
