@@ -1,18 +1,22 @@
-function submitOdd() {
-    const input = document.getElementById('oddInput').value;
-    
-    if (input % 2 !== 0) {
-        const time = new Date().toLocaleString('en-US', { timeZone: 'Asia/Colombo' });
-        const historyTable = document.querySelector('#history table');
-        const newRow = historyTable.insertRow(-1);
+document.getElementById('submitBtn').addEventListener('click', function() {
+    const oddInput = document.getElementById('oddInput');
+    const oddNumber = parseInt(oddInput.value);
 
-        const timeCell = newRow.insertCell(0);
-        const oddCell = newRow.insertCell(1);
-
-        timeCell.textContent = time;
-        oddCell.textContent = input;
-        document.getElementById('oddInput').value = ''; // Clear input
-    } else {
-        alert("Please enter an odd number.");
+    if (isNaN(oddNumber) || oddNumber % 2 === 0) {
+        alert('Please enter a valid odd number.');
+        return;
     }
-}
+
+    const currentTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Colombo" });
+    
+    const historyBody = document.getElementById('historyBody');
+    const newRow = historyBody.insertRow();
+    
+    const timeCell = newRow.insertCell(0);
+    const oddCell = newRow.insertCell(1);
+    
+    timeCell.textContent = currentTime;
+    oddCell.textContent = oddNumber;
+
+    oddInput.value = ''; // Clear the input field
+});
