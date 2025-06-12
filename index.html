@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sri Lanka Time and OOD</title>
+    <title>Odd Number Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>TIME | OOD</h1>
-        </header>
-        <main>
-            <div class="input-area">
-                <input type="text" id="oodInput" placeholder="Enter OOD...">
-                <button onclick="addHistory()">Add to History</button>
-            </div>
-            <div class="history">
-                <h2>History</h2>
-                <ul id="historyList"></ul>
-            </div>
-        </main>
+    <div>
+        <h1>Odd Number Tracker</h1>
+        <input type="text" id="oddInput" placeholder="Enter odd number" />
+        <button onclick="submitOdd()">Submit</button>
     </div>
+    <div id="history">
+        <h2>History</h2>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Odd Number</th>
+            </tr>
+        </table>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
